@@ -87,18 +87,18 @@ layout_mode = 2
 [node name="ColorButton4" parent="VBoxContainer/HBoxContainer4" instance=ExtResource("2_oaqxs")]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Submit"
-
 [node name="HSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
 min_value = 1.0
 max_value = 20.0
 value = 1.0
+
+[node name="SubmitButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Submit"
 
 [connection signal="pega_a_cor_ai" from="VBoxContainer/HBoxContainer/ColorButton" to="." method="_on_color_button_pega_a_cor_ai"]
 [connection signal="pega_a_cor_ai" from="VBoxContainer/HBoxContainer/ColorButton2" to="." method="_on_color_button_pega_a_cor_ai"]
@@ -117,3 +117,4 @@ value = 1.0
 [connection signal="pega_a_cor_ai" from="VBoxContainer/HBoxContainer4/ColorButton3" to="." method="_on_color_button_pega_a_cor_ai"]
 [connection signal="pega_a_cor_ai" from="VBoxContainer/HBoxContainer4/ColorButton4" to="." method="_on_color_button_pega_a_cor_ai"]
 [connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/SubmitButton" to="." method="_on_submit_button_pressed"]
