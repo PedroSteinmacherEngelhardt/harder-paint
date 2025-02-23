@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lioykntp4ja3"
-path="res://.godot/imported/staler-finished.png-498a17000d01277fecd429c2af6d0d6d.ctex"
+uid="uid://c2ivi6p8u1h0e"
+path="res://.godot/imported/gnomer-finished.png-902a5dc567a0dbf074929d503d0fe64b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/paintings/staler-finished.png"
-dest_files=["res://.godot/imported/staler-finished.png-498a17000d01277fecd429c2af6d0d6d.ctex"]
+source_file="res://assets/paintings/gnomer/gnomer-finished.png"
+dest_files=["res://.godot/imported/gnomer-finished.png-902a5dc567a0dbf074929d503d0fe64b.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

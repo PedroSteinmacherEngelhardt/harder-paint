@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://de7w3oawgybdl" path="res://canvas.tscn" id="2_g76wc"]
 [ext_resource type="PackedScene" uid="uid://2palx4mvtn7a" path="res://annoying_popup/annoying_pop_up.tscn" id="2_n4qrs"]
 [ext_resource type="Script" path="res://color_selector.gd" id="3_l2vn1"]
-[ext_resource type="Texture2D" uid="uid://brhmby0sl5d6e" path="res://assets/paintings/staler.png" id="5_r22a8"]
-[ext_resource type="Texture2D" uid="uid://lioykntp4ja3" path="res://assets/paintings/staler-finished.png" id="6_5l70t"]
+[ext_resource type="Texture2D" uid="uid://dn2tno7cu3r71" path="res://assets/paintings/lessi/lessi.png" id="5_rrh2e"]
+[ext_resource type="Texture2D" uid="uid://dnm5akrkio8e8" path="res://assets/paintings/lessi/lessi-finished.png" id="6_aoi72"]
 [ext_resource type="PackedScene" uid="uid://cokhyq5mn05g6" path="res://inteface.tscn" id="8_imkoo"]
 [ext_resource type="PackedScene" uid="uid://hy4k25fa61jb" path="res://assets/mobilia/lightbulb/lightbulb.gltf" id="10_307va"]
 [ext_resource type="PackedScene" uid="uid://bi8u7xryj3lt8" path="res://assets/mobilia/table/table.gltf" id="11_u2hre"]
@@ -77,8 +77,8 @@ albedo_texture = SubResource("ViewportTexture_yk74u")
 [sub_resource type="QuadMesh" id="QuadMesh_vo7jk"]
 size = Vector2(1.2, 1.2)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pwdy2"]
-data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m8hvg"]
+points = PackedVector3Array(0.6, 0.6, 0, 0.6, -0.6, 0, -0.6, 0.6, 0, -0.6, -0.6, 0)
 
 [sub_resource type="FogMaterial" id="FogMaterial_3rrxv"]
 density = 0.2
@@ -166,8 +166,8 @@ shape = SubResource("ConvexPolygonShape3D_6fq34")
 
 [node name="Canvas" parent="." instance=ExtResource("2_g76wc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100059, 0, -4.20283)
-ICON = ExtResource("5_r22a8")
-final_icon = ExtResource("6_5l70t")
+ICON = ExtResource("5_rrh2e")
+final_icon = ExtResource("6_aoi72")
 
 [node name="Player" parent="." instance=ExtResource("1_xiyyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40611, 0)
@@ -180,8 +180,7 @@ visible = false
 environment = SubResource("Environment_nug0r")
 
 [node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(512, 700)
-render_target_update_mode = 4
+size = Vector2i(500, 700)
 
 [node name="Control" parent="SubViewport" instance=ExtResource("8_imkoo")]
 
@@ -192,12 +191,13 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="colorSelector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00733173, 0, 0.00673056)
 material_override = SubResource("StandardMaterial3D_pthxh")
 mesh = SubResource("QuadMesh_vo7jk")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="colorSelector"]
-shape = SubResource("ConcavePolygonShape3D_pwdy2")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="colorSelector"]
+shape = SubResource("ConvexPolygonShape3D_m8hvg")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 0)
@@ -214,7 +214,7 @@ material = SubResource("FogMaterial_3rrxv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.91566, 0)
 
 [node name="blockbench_export" parent="." instance=ExtResource("11_u2hre")]
-transform = Transform3D(0.389847, 0, 0.920879, 0, 1, 0, -0.920879, 0, 0.389847, 1.9526, -0.405048, -3.96678)
+transform = Transform3D(0.0160213, 0, 0.999871, 0, 1, 0, -0.999871, 0, 0.0160213, 1.97077, -0.405048, -4.28089)
 
 [node name="blockbench_export3" parent="." instance=ExtResource("12_jtx4w")]
 transform = Transform3D(-0.927171, 0, 0.374639, 0, 1, 0, -0.374639, 0, -0.927171, 2.24623, 0.895942, -4.3565)
