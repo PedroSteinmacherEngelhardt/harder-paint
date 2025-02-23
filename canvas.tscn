@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://canvas.gd" id="1_jh67w"]
 [ext_resource type="Texture2D" uid="uid://bdkskr4bhotas" path="res://icon.svg" id="1_uls50"]
-[ext_resource type="Texture2D" uid="uid://brhmby0sl5d6e" path="res://assets/paintings/staler.png" id="3_l232q"]
+[ext_resource type="Texture2D" uid="uid://brhmby0sl5d6e" path="res://assets/paintings/staler/staler.png" id="3_l232q"]
 [ext_resource type="PackedScene" uid="uid://bun0xogqh6qmh" path="res://assets/mobilia/cavalete/cavalete.gltf" id="4_nqy3q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tk2te"]
