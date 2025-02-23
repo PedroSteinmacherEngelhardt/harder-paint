@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://de7w3oawgybdl" path="res://canvas.tscn" id="2_g76wc"]
 [ext_resource type="PackedScene" uid="uid://2palx4mvtn7a" path="res://annoying_popup/annoying_pop_up.tscn" id="2_n4qrs"]
 [ext_resource type="Script" path="res://color_selector.gd" id="3_l2vn1"]
-[ext_resource type="Texture2D" uid="uid://dn2tno7cu3r71" path="res://assets/paintings/lessi/lessi.png" id="5_rrh2e"]
-[ext_resource type="Texture2D" uid="uid://dnm5akrkio8e8" path="res://assets/paintings/lessi/lessi-finished.png" id="6_aoi72"]
+[ext_resource type="Texture2D" uid="uid://brhmby0sl5d6e" path="res://assets/paintings/staler/staler.png" id="7_4m55o"]
 [ext_resource type="PackedScene" uid="uid://cokhyq5mn05g6" path="res://inteface.tscn" id="8_imkoo"]
+[ext_resource type="Texture2D" uid="uid://lioykntp4ja3" path="res://assets/paintings/staler/staler-finished.png" id="8_yfg3n"]
 [ext_resource type="PackedScene" uid="uid://hy4k25fa61jb" path="res://assets/mobilia/lightbulb/lightbulb.gltf" id="10_307va"]
 [ext_resource type="PackedScene" uid="uid://bi8u7xryj3lt8" path="res://assets/mobilia/table/table.gltf" id="11_u2hre"]
 [ext_resource type="PackedScene" uid="uid://d3egtbfa2xfym" path="res://assets/mobilia/computer/old pc.gltf" id="12_jtx4w"]
@@ -84,9 +84,10 @@ points = PackedVector3Array(0.6, 0.6, 0, 0.6, -0.6, 0, -0.6, 0.6, 0, -0.6, -0.6,
 density = 0.2
 emission = Color(0.617455, 0.617455, 0.617455, 1)
 
-[node name="Demo" type="Node3D" node_paths=PackedStringArray("annoying_popup")]
+[node name="Demo" type="Node3D" node_paths=PackedStringArray("annoying_popup", "canva")]
 script = ExtResource("1_rsxib")
 annoying_popup = NodePath("AnnoyingPopUp")
+canva = NodePath("Canvas")
 
 [node name="AnnoyingPopUp" parent="." instance=ExtResource("2_n4qrs")]
 
@@ -166,8 +167,8 @@ shape = SubResource("ConvexPolygonShape3D_6fq34")
 
 [node name="Canvas" parent="." instance=ExtResource("2_g76wc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100059, 0, -4.20283)
-ICON = ExtResource("5_rrh2e")
-final_icon = ExtResource("6_aoi72")
+ICON = ExtResource("7_4m55o")
+final_icon = ExtResource("8_yfg3n")
 
 [node name="Player" parent="." instance=ExtResource("1_xiyyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40611, 0)

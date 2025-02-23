@@ -18,6 +18,10 @@ var random = randi()
 var last_pixel
 
 
+func updeita():
+	pass
+
+
 func _ready():
 	image = ICON.get_image()
 	if image.is_compressed():
