@@ -182,6 +182,8 @@ render_target_update_mode = 4
 [node name="colorSelector" type="StaticBody3D" parent="."]
 transform = Transform3D(0.924026, 0, -0.382329, 0, 1, 0, 0.382329, 0, 0.924026, 2.08006, 1.72909, -3.93725)
 script = ExtResource("3_l2vn1")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="colorSelector"]
 material_override = SubResource("StandardMaterial3D_pthxh")
