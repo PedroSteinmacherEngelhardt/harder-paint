@@ -116,3 +116,4 @@ value = 1.0
 [connection signal="pega_a_cor_ai" from="VBoxContainer/HBoxContainer4/ColorButton2" to="." method="_on_color_button_pega_a_cor_ai"]
 [connection signal="pega_a_cor_ai" from="VBoxContainer/HBoxContainer4/ColorButton3" to="." method="_on_color_button_pega_a_cor_ai"]
 [connection signal="pega_a_cor_ai" from="VBoxContainer/HBoxContainer4/ColorButton4" to="." method="_on_color_button_pega_a_cor_ai"]
+[connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
