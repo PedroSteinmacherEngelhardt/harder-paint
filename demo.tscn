@@ -1,10 +1,12 @@
-[gd_scene load_steps=33 format=3 uid="uid://yyjc8fnroj4f"]
+[gd_scene load_steps=34 format=3 uid="uid://yyjc8fnroj4f"]
 
 [ext_resource type="Texture2D" uid="uid://dgd7wp7c2m1uc" path="res://assets/background/floor.png" id="1_ekxac"]
+[ext_resource type="Script" path="res://demo.gd" id="1_rsxib"]
 [ext_resource type="PackedScene" uid="uid://fclkh4vgro8u" path="res://player.tscn" id="1_xiyyp"]
 [ext_resource type="Texture2D" uid="uid://ckmx5vgadic3u" path="res://assets/background/wall.png" id="2_6hrfj"]
 [ext_resource type="Texture2D" uid="uid://co53gls3o2bqc" path="res://assets/background/ceiling.jpg" id="2_g36gq"]
 [ext_resource type="PackedScene" uid="uid://de7w3oawgybdl" path="res://canvas.tscn" id="2_g76wc"]
+[ext_resource type="PackedScene" uid="uid://2palx4mvtn7a" path="res://annoying_popup/annoying_pop_up.tscn" id="2_n4qrs"]
 [ext_resource type="Script" path="res://color_selector.gd" id="3_l2vn1"]
 [ext_resource type="Texture2D" uid="uid://brhmby0sl5d6e" path="res://assets/paintings/staler/staler.png" id="7_4m55o"]
 [ext_resource type="PackedScene" uid="uid://cokhyq5mn05g6" path="res://inteface.tscn" id="8_imkoo"]
@@ -12,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://hy4k25fa61jb" path="res://assets/mobilia/lightbulb/lightbulb.gltf" id="10_307va"]
 [ext_resource type="PackedScene" uid="uid://bi8u7xryj3lt8" path="res://assets/mobilia/table/table.gltf" id="11_u2hre"]
 [ext_resource type="PackedScene" uid="uid://d3egtbfa2xfym" path="res://assets/mobilia/computer/old pc.gltf" id="12_jtx4w"]
-[ext_resource type="PackedScene" uid="uid://6k3ew6mawu10" path="res://assets/mobilia/lightbulb/cable.gltf" id="13_sfse3"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dqmlb"]
 size = Vector2(10, 50)
@@ -200,7 +201,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_m8hvg")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.2076, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 0)
 light_energy = 7.209
 spot_range = 13.062
 spot_angle = 86.2064
@@ -219,5 +220,4 @@ transform = Transform3D(0.0160213, 0, 0.999871, 0, 1, 0, -0.999871, 0, 0.0160213
 [node name="blockbench_export3" parent="." instance=ExtResource("12_jtx4w")]
 transform = Transform3D(-0.927171, 0, 0.374639, 0, 1, 0, -0.374639, 0, -0.927171, 2.24623, 0.895942, -4.3565)
 
-[node name="cable" parent="." instance=ExtResource("13_sfse3")]
-transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 5.12546, 0)
+[connection signal="submit" from="SubViewport/Control" to="." method="_on_control_submit"]
