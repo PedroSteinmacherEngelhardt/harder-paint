@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://fclkh4vgro8u"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_xdbkp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofd3q"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bg0ox"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97784, 0)
+script = ExtResource("1_xdbkp")
+
+[node name="fps" type="Label" parent="."]
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+use_top_left = true
+
+[node name="Label" type="Label" parent="CenterContainer"]
+layout_mode = 2
+text = "O"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64989, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.000110149, 0)
+target_position = Vector3(0, 0, 100)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ofd3q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_bg0ox")
