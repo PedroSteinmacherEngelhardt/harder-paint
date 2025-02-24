@@ -48,6 +48,20 @@ func _process(delta):
 		last_pixel = null
 
 
+func are_colors_similar(color1: Color, color2: Color, threshold: float = 30.0) -> bool:
+	var r1 = color1.r * 255
+	var g1 = color1.g * 255
+	var b1 = color1.b * 255
+
+	var r2 = color2.r * 255
+	var g2 = color2.g * 255
+	var b2 = color2.b * 255
+
+	var distance = sqrt((r1 - r2) * (r1 - r2) + (g1 - g2) * (g1 - g2) + (b1 - b2) * (b1 - b2))
+
+	return distance < threshold
+
+
 func compare_image():
 	var i = 0.0
 	for x in range(256):
@@ -58,7 +72,7 @@ func compare_image():
 			if image_pixel.a == 0:
 				image_pixel = origin_image.get_pixel(x,y)
 			
-			if image_pixel == compare_pixel:
+			if are_colors_similar(image_pixel, compare_pixel):
 				i += 1
 	var result = i/(256*256)
 	print(result)
